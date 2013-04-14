@@ -1,0 +1,105 @@
+<html>
+<head>
+<style>
+body {
+   padding:10px 0 0 0;
+   margin:0;
+}
+
+#header {
+   border-style:dashed;
+   padding:20px;
+   margin:50px;
+   text-align: center;
+   margin-bottom: 40px;
+   font-size: 40px;
+      font-family:'Museo Slab';
+}
+#textdiv {
+   margin-top:280px;
+   padding:auto;
+   text-align: center;
+   font-family:'Museo Slab';
+   font-size: 16px;
+}
+#footer {
+   border-style:dashed;
+   padding:20px;
+   margin:50px;
+   text-align: center;
+   margin-bottom: 40px;
+   font-size: 40px;
+      font-family:'Museo Slab';
+}
+#page {
+   width: 384px;
+}
+#box {
+   font-size: 10px;
+   border-radius: 2px;
+   position: relative;
+   height: 1400px;
+   margin:auto;
+   margin-top: 50px;
+   width: 300px;
+
+}
+#box div {
+   border: 1px solid rgba(255,255,255,0);
+   border-radius: 2px;
+   position: absolute;
+}
+#innersqure {
+   overflow: hidden;
+}
+</style>
+<script >
+
+
+var squreR = 300;
+var innersqure = 250;
+var pepperoniR = 30;
+var squreGap =350;
+var looptime = 0;
+function init() {
+
+
+   for(var p=0;p<4;p++){
+
+      var squrediv = document.createElement("div");
+      squrediv.id = "squre";
+      squrediv.style.top = p*squreGap + "px";
+      squrediv.style.width = squreR+"px";
+      squrediv.style.height = squreR+"px";
+      squrediv.style.borderRadius = 2+"px";
+      squrediv.style.border = "0px solid #000";
+      var e = document.getElementById('box');
+      e.appendChild(squrediv);
+
+      var ringdiv = document.createElement("div");
+      ringdiv.id = "innersqure";
+      ringdiv.style.width = innersqure+"px";
+      ringdiv.style.height = innersqure+"px";
+      ringdiv.style.borderRadius = 1+"px";
+      ringdiv.style.margin = 23 +"px";
+      ringdiv.style.border = "1px solid #000";
+      squrediv.appendChild(ringdiv);
+   
+   }
+
+}
+   
+</script>
+
+</head>
+<body onload="init();">
+<div id="page">
+<div id="header">Task finished! Have a nice day!</div>
+<div id="box">
+</div>
+<div id="footer">Hello, I am going to bake some biscuits for you!</div>
+
+</div>
+
+</body>
+</html>
